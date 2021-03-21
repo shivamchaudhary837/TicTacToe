@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TicTacToe</string>
+    <string name="reset_Text">PLAY AGAIN</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start_game_text">START GAME</string>
+    <string name="tic_tak_toe_label">TIC TAC TOE</string>
+    <string name="game_label">GAME</string>
+    <string name="end_game_text">END GAME</string>
+
+</resources>
