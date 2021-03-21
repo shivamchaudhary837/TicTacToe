@@ -1,6 +1,7 @@
 package com.example.tictactoe
 
-import android.content.Intent
+
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,14 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
-import android.widget.Toolbar
-import androidx.activity.OnBackPressedCallback
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import kotlinx.android.synthetic.main.activity_main.*
+
 import kotlinx.android.synthetic.main.fragment_game.*
-import kotlinx.coroutines.handleCoroutineException
+
 
 class GameFragment : Fragment(),View.OnClickListener {
 
@@ -25,19 +21,18 @@ class GameFragment : Fragment(),View.OnClickListener {
 
     private var boardStatus=Array(3){IntArray(3)}
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
+        //locked orientation in potrait mode
+        getActivity()?.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_game, container, false)
-    }
-
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
     }
 
 
